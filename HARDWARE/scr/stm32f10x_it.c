@@ -64,7 +64,7 @@ void USART3_IRQHandler(void)
 {
     static u8 seri_count = 0;
     u8 check_sum         = 0;
-    u8 i; 
+    u8 i;
     static u8 uflag = 0;
     if (USART_GetITStatus(USART3, USART_IT_RXNE) != RESET) //?????
     {
@@ -90,7 +90,7 @@ void USART3_IRQHandler(void)
                         sscanf(fina_data1, "%d", &finaldata1); // 字符串转int
                         Delay_Ms(10);
                         u1_printf("距离值=%dmm\r\n", finaldata1); // print用串口2，串口1用来和激光模块通讯
-                        DIST = finaldata1*1.0/10;
+                        DIST = finaldata1 * 1.0 / 10;
                         memset(fina_data1, 0, 6);
                     }
                     seri_count = 0;
